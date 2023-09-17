@@ -102,28 +102,70 @@
 # --------------------------------------------------- Rot13 --------------------------------------------------- #
 
 
-def rot13(message):
-    letters_low = 'abcdefghijklmnopqrstuvwxyz'
-    letters_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+# def rot13(message):
+#     letters_low = 'abcdefghijklmnopqrstuvwxyz'
+#     letters_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-    def in_list(char,list):
-        return char in list
+#     def in_list(char,list):
+#         return char in list
     
-    code=""
+#     code=""
 
-    for x in message:
-        if in_list(x,letters_low):
-            code += letters_low[letters_low.index(x)+13] if letters_low.index(x) < 12 else letters_low[letters_low.index(x)-13]
-        elif in_list(x,letters_up):
-            code += letters_up[letters_up.index(x)+13] if letters_up.index(x) < 12 else letters_up[letters_up.index(x)-13]
-        else: code+=x
-    return code
+#     for x in message:
+#         if in_list(x,letters_low):
+#             code += letters_low[letters_low.index(x)+13] if letters_low.index(x) < 12 else letters_low[letters_low.index(x)-13]
+#         elif in_list(x,letters_up):
+#             code += letters_up[letters_up.index(x)+13] if letters_up.index(x) < 12 else letters_up[letters_up.index(x)-13]
+#         else: code+=x
+#     return code
 
 
-print(rot13('test'))
+# print(rot13('test'))
 
 # letters_low = 'abcdefghijklmnopqrstuvwxyz'
 # letters_up = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
 # print(letters_low[letters_up.index('M')+13])
+
+
+# --------------------------------------------------- Count divisors --------------------------------------------------- #
+
+# 4 --> 3 // we have 3 divisors - 1, 2 and 4
+# 5 --> 2 // we have 2 divisors - 1 and 5
+# 12 --> 6 // we have 6 divisors - 1, 2, 3, 4, 6 and 12
+# 30 --> 8 // we have 8 divisors - 1, 2, 3, 5, 6, 10, 15 and 30
+
+
+# n = 30
+
+# def divisors(n):
+#     return len([x for x in range(1,n+1) if not n%x])
+
+
+# print(divisors(n))
+
+# print([x for x in range(9) if not x%2])
+
+
+# --------------------------------------------------- Needle in the haystack --------------------------------------------------- #
+
+
+
+# def find_needle(haystack=[0]):
+#     return f"Found the needle at position {haystack.index('needle')}"
+#     # pass
+    
+
+# haystack = ["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]
+# # haystack.index("needle")
+# print(find_needle(haystack))
+
+
+# --------------------------------------------------- Correct the mistake --------------------------------------------------- #
+
+paris="P@R15"
+
+# print(paris.translate(str.maketrans()))
+
+print(paris.translate(str.maketrans("@15","ais")))
